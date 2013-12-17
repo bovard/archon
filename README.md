@@ -1,20 +1,16 @@
-archon
-======
+# archon
 
 A helper to test battle code bots (battlecode.org)
 
-Installation [Unsupported]
-======
+## Installation [Unsupported]
 
 npm install -g archon
 
-How it works [Unsupported]
-======
+## How it works [Unsupported]
 
 cd path/to/battlecode
 
-Single matches [Unsupported]
-=====
+### Single matches [Unsupported]
 
 Plays the two bots against each other on the specified maps
 ```
@@ -38,8 +34,7 @@ on map1 botB won in 1000 - 1499 rounds
  bot B 5 5 50
 ```
 
-Round robin tournaments [Unsupported]
-=====
+### Round robin tournaments [Unsupported]
 
 Plays all bots against each other on every map
 
@@ -58,8 +53,7 @@ Plays all bots against each other on every map
  botC 3 1 75
 ```
 
-VS World [Unsupported]
-=====
+### VS World [Unsupported]
 
 Plays the host bot against all the others on all the maps
 
@@ -75,10 +69,9 @@ Plays the host bot against all the others on all the maps
  botA map2 1 1 50
 ```
 
-Feature Requests
-=====
-Output to CSV
-Save the game files
-Single elimination tournament
-Double elimination tournament
+## Feature Requests
+1. Output to CSV
+2. Save the game files
+3. Single elimination tournament
+4. Double elimination tournament
 
