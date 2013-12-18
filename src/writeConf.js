@@ -1,6 +1,8 @@
 var fs = require('fs');
 
-var confFile = [
+var FILE_NAME = 'bc.conf';
+
+var CONF_FILE = [
     'bc.server.throttle=yield',
     'bc.server.throttle-count=50',
 
@@ -32,4 +34,10 @@ var TEAM_A_CONF = 'bc.game.team-a=';
 var TEAM_B_CONF = 'bc.game.team-b=';
 
 function writeConf(map, team_a, team_b) {
+    var confFileContents = CONF_FILE.join('\n');
+    confFileContents += '\n' + MAP_CONF + map;
+    confFileContents += '\n' + TEAM_A_CONF + team_a;
+    confFileContents += '\n' + TEAM_B_CONF + team_b;
+
+    fs.writeFileSync(confFileContents, FILE_NAME)
 }

@@ -2,6 +2,12 @@ var fs = require('fs');
 
 
 function validate(map_list, team_list) {
+    if (map_list.length === 0) {
+        throw 'ERROR: Must specify some --maps'
+    }
+    if (team_list.length === 0) {
+        throw 'ERROR: Must specify some --teams'
+    }
     return _validateFolder() && _validateMaps(map_list) && _validateTeams(team_list);
 }
 
@@ -10,21 +16,20 @@ function _validateFolder() {
 
     folders = _arrayToLowerCase(folders);
 
-    return folders.indexOf('teams') !== -1 && folders.indexOf('maps') !== 1
+    if (!(folders.indexOf('teams') !== -1 && folders.indexOf('maps') !== 1)) {
+        throw 'ERROR: Is the current working directory the top level of the BattleCode client?'
+    }
 }
 
 
 function _IsSubArr(sub_arr, arr) {
-    var valid = true;
     arr = _arrayToLowerCase(arr);
     sub_arr = _arrayToLowerCase(sub_arr)
     for (var i = 0; i < sub_arr.length; i++) {
         if (arr.indexOf(sub_arr[i]) === -1) {
-            console.error(sub_arr[i] + ' not found!');
-            valid = false;
+            throw 'ERROR: ' + sub_arr[i] + ' not found!';
         }
     }
-    return valid
 }
 
 
