@@ -1,4 +1,5 @@
 var fs = require('fs');
+var winston = require('winston');
 
 
 function validate(map_list, team_list) {
@@ -58,13 +59,41 @@ function _arrayToLowerCase(arr) {
 
 function stripLeadingPaths(arr) {
     for (var i = 0; i < arr.length; i++) {
-        console.log(arr[i]);
-        arr[i] = arr[i].split("/").pop();
-        console.log(arr[i]);
+        arr[i] = arr[i].split('/').pop();
     }
+    return arr;
+}
+
+function toArray(arr) {
+    if (typeof(arr) === 'string') {
+        arr = [arr]
+    }
+    return arr;
+}
+
+function getMapsAndTeams(arr) {
+    var maps = [],
+        teams = [];
+
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i].indexOf('teams') === 0) {
+            teams.push(arr[i])
+        } else if (arr[i].indexOf('maps') === 0) {
+            maps.push(arr[i]);
+        } else {
+            winston.error('Ignored input ' + arr[i] + ' needs to start with maps/ or teams/')
+        }
+    }
+
+    maps = stripLeadingPaths(maps);
+    teams = stripLeadingPaths(teams);
+
+    return [maps, teams];
 }
 
 module.exports = {
     validate: validate,
-    stripLeadingPaths: stripLeadingPaths
+    stripLeadingPaths: stripLeadingPaths,
+    toArray: toArray,
+    getMapsAndTeams: getMapsAndTeams
 };

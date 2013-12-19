@@ -4,19 +4,13 @@ var argv = require('optimist').argv;
 var game = require('./game');
 
 (function() {
-    console.log(argv.maps);
-    console.log(argv.teams);
     var host, maps, teams;
-    maps = argv.maps;
-    teams = argv.teams;
-    host = argv.host;
+    var mapsTeams = validate.getMapsAndTeams(argv._);
+    maps = mapsTeams[0];
+    teams = mapsTeams[1];
     if (argv.host) {
-        host = validate.stripLeadingPaths(argv.host);
+        host = validate.stripLeadingPaths([argv.host]);
     }
-    maps = validate.stripLeadingPaths(maps);
-    teams = validate.stripLeadingPaths(teams);
-    console.log(maps);
-    console.log(teams);
 
     if (!validate.validate(maps, teams)) {
         throw 'Invalid Invocation or File Not Found';
@@ -25,7 +19,5 @@ var game = require('./game');
     function callback(round, winner) {
         throw winner + ' won after round ' + round;
     }
-
-    game.runGame(maps[0], teams[0], teams[1])
 
 }).call(this);
