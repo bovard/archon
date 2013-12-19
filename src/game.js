@@ -27,6 +27,7 @@ function runGame(map, teamA, teamB, callback) {
 
     game.stdout.on('data', function (data) {
         // update the round if it's in there
+        data = data.toString();
         if (data.indexOf(ROUND) !== -1) {
             var split = data.split(':')
             round = parseInt(split[1]);
@@ -46,11 +47,12 @@ function runGame(map, teamA, teamB, callback) {
     });
 
     game.stderr.on('data', function (data) {
+        data = data.toString();
         winston.error('stderr: ' + data);
     });
 
     game.on('close', function (code) {
-        winston.info('game exit' + code);
+        winston.info('game exit code ' + code);
         if (callback) {
             callback(round, winner);
         }

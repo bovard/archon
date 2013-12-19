@@ -39,7 +39,7 @@ function writeConf(map, teamA, teamB) {
     confFileContents += '\n' + TEAM_A_CONF + teamA;
     confFileContents += '\n' + TEAM_B_CONF + teamB;
 
-    fs.writeFileSync(confFileContents, FILE_NAME)
+    fs.writeFileSync(FILE_NAME, confFileContents);
 }
 
 module.exports.writeConf = writeConf;

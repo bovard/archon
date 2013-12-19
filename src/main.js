@@ -12,12 +12,12 @@ var game = require('./game');
         host = validate.stripLeadingPaths([argv.host]);
     }
 
-    if (!validate.validate(maps, teams)) {
-        throw 'Invalid Invocation or File Not Found';
-    }
+    validate.validate(maps, teams);
 
     function callback(round, winner) {
         throw winner + ' won after round ' + round;
     }
+
+    game.runGame(maps[0], teams[0], teams[1]);
 
 }).call(this);
