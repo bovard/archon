@@ -10,7 +10,7 @@ npm install -g archon
 
 cd path/to/battlecode
 
-### Single matches [Unsupported]
+### Single matches
 
 Plays the two bots against each other on the specified maps
 ```
@@ -30,11 +30,11 @@ on map1 botB won in 1000 - 1499 rounds
  ...
  mapN botA 1500
  Summary:
- bot A 5 5 50
- bot B 5 5 50
+ botA 5 5 50
+ botB 5 5 50
 ```
 
-### Round robin tournaments [Unsupported]
+### Round Robin 
 
 Plays all bots against each other on every map
 

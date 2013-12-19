@@ -58,8 +58,14 @@ function _arrayToLowerCase(arr) {
 }
 
 function stripLeadingPaths(arr) {
+    var temp;
     for (var i = 0; i < arr.length; i++) {
-        arr[i] = arr[i].split('/').pop();
+        temp = arr[i].split('/');
+        arr[i] = temp.pop();
+        // support for trailing slash
+        if (!arr[i]) {
+            arr[i] = temp.pop();
+        }
     }
     return arr;
 }

@@ -31,17 +31,17 @@ function runGame(map, teamA, teamB, callback) {
         if (data.indexOf(ROUND) !== -1) {
             var split = data.split(':')
             round = parseInt(split[1]);
-            winston.info('Round ' + round)
+            winston.debug('Round ' + round)
         }
         // A is the winner!
         if (data.indexOf(A_WINS) !== -1) {
             winner = teamA;
-            winston.info(winner + ' wins!')
+            winston.debug(winner + ' wins!')
         }
         // B is the winner!
         if (data.indexOf(B_WINS) !== -1) {
             winner = teamB;
-            winston.info(winner + ' wins!')
+            winston.debug(winner + ' wins!')
         }
         winston.verbose('stdout: ' + data);
     });
@@ -52,9 +52,9 @@ function runGame(map, teamA, teamB, callback) {
     });
 
     game.on('close', function (code) {
-        winston.info('game exit code ' + code);
+        winston.verbose('game exit code ' + code);
         if (callback) {
-            callback(round, winner);
+            callback(round, winner, map, teamA, teamB);
         }
     });
 
