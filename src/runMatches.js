@@ -12,7 +12,7 @@ function _generateRoundRobinGames(maps, teams) {
 
     var games = [];
 
-    for (i = 0; i < maps.length; i ++) {
+    for (i = 0; i < maps.length; i++) {
         for (j = 0; j < teams.length; j++) {
             for (k = j + 1; k < teams.length; k++) {
                 games.push([maps[i], teams[j], teams[k]])
@@ -24,7 +24,17 @@ function _generateRoundRobinGames(maps, teams) {
 }
 
 function _generateVsWorldGames(maps, teams, host) {
+    var i, j;
 
+    var games = [];
+
+    for (i = 0; i < maps.length; i++) {
+        for (j = 0; j < teams.length; j++) {
+            games.push([maps[i], host, teams[j]]);
+        }
+
+    }
+    return games;
 }
 
 
@@ -39,6 +49,9 @@ function runMatches(maps, teams, host) {
     var winLoss = {};
     for (var i = 0; i < teams.length; i++) {
         winLoss[teams[i]] = [0,0];
+    }
+    if (host) {
+        winLoss[host] = [0,0];
     }
 
     function endGame(round, winner, map, teamA, teamB) {

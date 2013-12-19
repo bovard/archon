@@ -15,7 +15,7 @@ cd path/to/battlecode
 Plays the two bots against each other on the specified maps
 ```
 > archon match teams/botA teams/botB maps/map1
- map1 botB 1000
+ map1 [botA/botB] botB 1000
  Summary:
  botA 0  1 0
  botB 1  0 100
@@ -25,10 +25,10 @@ on map1 botB won in 1000 - 1499 rounds
 ```
 > archon match teams/botA teams/botB maps/map1 maps/map2 ... maps/mapN
 
- map1 botA 500
- map2 botB 1000
+ map1 [botA/botB] botA 500
+ map2 [botA/botB] botB 1000
  ...
- mapN botA 1500
+ mapN [botA/botB] botA 1500
  Summary:
  botA 5 5 50
  botB 5 5 50

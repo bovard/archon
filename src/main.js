@@ -11,14 +11,6 @@ var runMatches = require('./runMatches').runMatches;
     if (argv.host) {
         host = validate.stripLeadingPaths([argv.host])[0];
     }
-
     validate.validate(maps, teams);
-
-    function callback(round, winner) {
-        throw winner + ' won after round ' + round;
-    }
-
     runMatches(maps, teams, host);
-
-
 }).call(this);
