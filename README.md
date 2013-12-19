@@ -2,7 +2,7 @@
 
 A helper to test battle code bots (battlecode.org)
 
-## Installation [Unsupported]
+## Installation
 
 npm install -g archon
 
