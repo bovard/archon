@@ -85,7 +85,7 @@ Plays all the bots found in the team folder against each other on maps map1 and 
 ```
 > archon -m -t
 ```
-Plays all the bots against each other on all the maps!
+Plays all the bots against each other on all the maps! (works with --host as well)
 
 ## Feature Requests
 1. Output to CSV
