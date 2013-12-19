@@ -53,7 +53,7 @@ Plays all bots against each other on every map
  botC 3 1 75
 ```
 
-### VS World [Unsupported]
+### VS World
 
 Plays the host bot against all the others on all the maps
 
