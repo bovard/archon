@@ -1,0 +1,64 @@
+
+var path = require('path');
+var spawn = require('child_process').spawn;
+var winston = require('winston');
+
+var writeConf = require('./writeConf').writeConf;
+
+
+var ROUND = 'Round';
+var A_WINS = '(A) wins';
+var B_WINS = '(B) wins';
+
+function runGame(map, teamA, teamB, callback) {
+
+    // write the bc.conf file to use the correct map and teams.
+    writeConf(map, teamA, teamB);
+
+    var round = 0;
+    var winner;
+
+    // after we've written the bc.conf kick off the game!
+    var game = spawn('ant',
+        [
+            'file'
+        ]
+    );
+
+    game.stdout.on('data', function (data) {
+        // update the round if it's in there
+        if (data.indexOf(ROUND) !== -1) {
+            var split = data.split(':')
+            round = parseInt(split[1]);
+            winston.info('Round ' + round)
+        }
+        // A is the winner!
+        if (data.indexOf(A_WINS) !== -1) {
+            winner = teamA;
+            winston.info(winner + ' wins!')
+        }
+        // B is the winner!
+        if (data.indexOf(B_WINS) !== -1) {
+            winner = teamB;
+            winston.info(winner + ' wins!')
+        }
+        winston.verbose('stdout: ' + data);
+    });
+
+    game.stderr.on('data', function (data) {
+        winston.error('stderr: ' + data);
+    });
+
+    game.on('close', function (code) {
+        winston.info('game exit' + code);
+        if (callback) {
+            callback(round, winner);
+        }
+    });
+
+
+}
+
+
+
+module.exports.runGame = runGame;
