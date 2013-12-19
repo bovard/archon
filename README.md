@@ -8,13 +8,16 @@ npm install -g archon
 
 ## How it works
 
+First do:
+```
 cd path/to/battlecode
+```
 
 ### Single matches
 
 Plays the two bots against each other on the specified maps
 ```
-> archon match teams/botA teams/botB maps/map1
+> archon teams/botA teams/botB maps/map1
  map1 [botA/botB] botB 1000
  Summary:
  botA 0  1 0
@@ -23,7 +26,7 @@ Plays the two bots against each other on the specified maps
 on map1 botB won in 1000 - 1499 rounds
 
 ```
-> archon match teams/botA teams/botB maps/map1 maps/map2 ... maps/mapN
+> archon teams/botA teams/botB maps/map1 maps/map2 ... maps/mapN
 
  map1 [botA/botB] botA 500
  map2 [botA/botB] botB 1000
@@ -39,7 +42,7 @@ on map1 botB won in 1000 - 1499 rounds
 Plays all bots against each other on every map
 
 ```
-> archon match teams/botA teams/botB teams/botC maps/map1 maps/map2
+> archon teams/botA teams/botB teams/botC maps/map1 maps/map2
 
  map1 [botA/botB] botA 1000
  map1 [botA/botC] botC 500
@@ -58,7 +61,7 @@ Plays all bots against each other on every map
 Plays the host bot against all the others on all the maps
 
 ```
-> archon match --host botA teams/botB teams/botC maps/map1 maps/map2
+> archon --host botA teams/botB teams/botC maps/map1 maps/map2
 
  map1 [botA/botB] botA 500
  map1 [botA/botC] botC 1000
@@ -68,6 +71,21 @@ Plays the host bot against all the others on all the maps
  botA map1 1 1 50
  botA map2 1 1 50
 ```
+
+### Options
+
+```
+> archon -m teams/botA teams/botB
+```
+Plays botA vs botB in all maps found in the maps/ folder.
+```
+> archon -t maps/map1 maps/map2
+```
+Plays all the bots found in the team folder against each other on maps map1 and map2
+```
+> archon -m -t
+```
+Plays all the bots against each other on all the maps!
 
 ## Feature Requests
 1. Output to CSV
