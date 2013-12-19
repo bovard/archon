@@ -1,19 +1,34 @@
 {
-  "author": "Bovard Tiberi",
+  "author": "Bovard Tiberi <bovard.tiberi@gmail.com> (http://github.com/bovard)",
   "name": "archon",
   "description": "A helper to test battle code bots (battlecode.org)",
-  "version": "0.0.1",
+  "keywords": [
+    "battlecode",
+    "battle",
+    "code"
+  ],
+  "version": "1.0.0",
+  "license": "MIT",
   "repository": {
-    "url": ""
+    "type": "git",
+    "url": "http://github.com/bovard/archon.git"
   },
-  "main": "./src/main",
+  "main": "./lib/main",
+  "bin": "./bin/archon",
   "dependencies": {
-      "optimist": "0.6.0",
-      "winston": "*"
+    "optimist": "0.6.0",
+    "winston": "*"
   },
   "devDependencies": {},
   "optionalDependencies": {},
   "engines": {
     "node": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/bovard/archon/issues"
+  },
+  "homepage": "https://github.com/bovard/archon",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
