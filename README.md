@@ -6,7 +6,7 @@ A helper to test battle code bots (battlecode.org)
 
 npm install -g archon
 
-## How it works [Unsupported]
+## How it works
 
 cd path/to/battlecode
 
