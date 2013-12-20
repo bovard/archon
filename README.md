@@ -92,4 +92,5 @@ Plays all the bots against each other on all the maps! (works with --host as wel
 2. Save the game files
 3. Single elimination tournament
 4. Double elimination tournament
-
+5. Multiple games running at one time
+6. open the game visualation tool to watch games
