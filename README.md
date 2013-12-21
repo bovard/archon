@@ -10,7 +10,8 @@ npm install -g archon
 
 First do:
 ```
-cd path/to/battlecode
+> cd path/to/battlecode
+> archon -h # shows the help and usage
 ```
 
 ### Single matches
