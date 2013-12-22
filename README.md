@@ -13,6 +13,7 @@ First do:
 > cd path/to/battlecode
 > archon -h # shows the help and usage
 ```
+(all replays are saved in the replay/ folder)
 
 ### Single matches
 
@@ -95,8 +96,7 @@ Plays the maps as a series instead of individually for the specified teams (work
 
 ## Feature Requests
 1. Output to CSV
-2. Save the game files
-3. Single elimination tournament
-4. Double elimination tournament
-5. Multiple games running at one time
-6. open the game visualation tool to watch games
+2. Single elimination tournament
+3. Double elimination tournament
+4. Multiple games running at one time (not possible)
+5. open the game visualation tool to watch games
