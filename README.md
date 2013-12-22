@@ -87,6 +87,15 @@ Plays all the bots found in the team folder against each other on maps map1 and 
 > archon -m -t
 ```
 Plays all the bots against each other on all the maps! (works with --host as well)
+```
+> archon -s maps/map1 maps/map2 maps/map3 teams/team1 teams/team2
+```
+Plays the maps as a series instead of individually for the specified teams (works with host)
+```
+> archon -c 8 -m -t
+```
+Specifies the number of games to run concurrently
+
 
 ## Feature Requests
 1. Output to CSV
