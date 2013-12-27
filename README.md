@@ -13,7 +13,7 @@ First do:
 > cd path/to/battlecode
 > archon -h # shows the help and usage
 ```
-(all replays are saved in the replay/ folder)
+(all replays are saved in the replay/ folder by default, see -r)
 
 ### Single matches
 
@@ -74,29 +74,41 @@ Plays the host bot against all the others on all the maps
  botA map2 1 1 50
 ```
 
+### Watch the matches
+
+You can then watch all your saved games
+```
+> archon -v replays/match.rms
+```
+Opens match.rms if the visualizer for you to watch
+```
+> archon -v replays
+```
+Opens all replays in the replay folder for you to watch (close the window to start the next)
+
+
 ### Options
 
 ```
-> archon -m teams/botA teams/botB
-```
-Plays botA vs botB in all maps found in the maps/ folder.
-```
-> archon -t maps/map1 maps/map2
-```
-Plays all the bots found in the team folder against each other on maps map1 and map2
-```
-> archon -m -t
-```
-Plays all the bots against each other on all the maps! (works with --host as well)
-```
-> archon -s maps/map1 maps/map2 maps/map3 teams/team1 teams/team2
-```
-Plays the maps as a series instead of individually for the specified teams (works with host)
+> archon -h
+Usage:
+  archon [options] [maps] [teams]
+Example:
+  archon maps/map1.xml teams/team1/ teams/team2/
 
+Options:
+  -c, --clean       Cleans up after archon and restores defaults
+  -h, --help        Prints usage
+  -m, --all-maps    Runs all teams specified on all maps in maps/
+  -o, --host        Specify a host for the tournament for VsWorld
+  -r, --replay-dir  Specify the directory to save the replays in    [default: "replays"]
+  -s, --series      Players play the maps in series instead 1 by 1
+  -t, --all-teams   Runs all teams in teams/ on the specified maps
+  -v, --visualize   Runs the specified replay(s) in the viewer
+```
 
 ## Feature Requests
 1. Output to CSV
 2. Single elimination tournament
 3. Double elimination tournament
 4. Multiple games running at one time (not possible)
-5. open the game visualation tool to watch games
