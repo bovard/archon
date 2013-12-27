@@ -112,7 +112,7 @@ Options:
 ```
 
 ## Feature Requests
-1. Output to CSV
+1. Output to CSV and/or Google Big Query
 2. Single elimination tournament
 3. Double elimination tournament
 4. Multiple games running at one time (not possible)
