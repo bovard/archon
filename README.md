@@ -84,7 +84,11 @@ Opens match.rms if the visualizer for you to watch
 ```
 > archon -v replays
 ```
-Opens all replays in the replay folder for you to watch (close the window to start the next)
+Opens all matches in the 'replays' folder for you to watch (close the window to start the next)
+```
+> archon -v replays replays1/match.rms replays2
+```
+Opens all the matches in replays and replays2 and match.rms for you to watch
 
 
 ### Options
