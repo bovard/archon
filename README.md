@@ -13,7 +13,6 @@ First do:
 > cd path/to/battlecode
 > archon -h # shows the help and usage
 ```
-(all replays are saved in the replay/ folder by default, see -r)
 
 ### Single matches
 
