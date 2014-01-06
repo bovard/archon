@@ -101,7 +101,9 @@ Example:
 
 Options:
   -c, --clean       Cleans up after archon and restores defaults
+  -e, --export-csv  Exports game data to csv
   -h, --help        Prints usage
+  -l, --elo         Calculates the elo for the run
   -m, --all-maps    Runs all teams specified on all maps in maps/
   -o, --host        Specify a host for the tournament for VsWorld
   -r, --replay-dir  Specify the directory to save the replays in    [default: "replays"]
