@@ -14,7 +14,13 @@ First do:
 > archon -h # shows the help and usage
 ```
 
-### Single matches
+### Run Matches
+
+```
+archon match [teams] [maps] [options]
+```
+
+#### Single matches
 
 Plays the two bots against each other on the specified maps
 ```
@@ -38,7 +44,7 @@ on map1 botB won in 1000 - 1499 rounds
  botB 5 5 50
 ```
 
-### Round Robin 
+#### Round Robin
 
 Plays all bots against each other on every map
 
@@ -57,7 +63,7 @@ Plays all bots against each other on every map
  botC 3 1 75
 ```
 
-### VS World
+#### VS World
 
 Plays the host bot against all the others on all the maps
 
@@ -73,34 +79,16 @@ Plays the host bot against all the others on all the maps
  botA map2 1 1 50
 ```
 
-### Watch the matches
-
-You can then watch all your saved games
-```
-> archon -v replays/match.rms
-```
-Opens match.rms if the visualizer for you to watch
-```
-> archon -v replays
-```
-Opens all matches in the 'replays' folder for you to watch (close the window to start the next)
-```
-> archon -v replays replays1/match.rms replays2
-```
-Opens all the matches in replays and replays2 and match.rms for you to watch
-
-
-### Options
+#### Options
 
 ```
-> archon -h
+> archon match -h
 Usage:
-  archon [options] [maps] [teams]
+  archon match [maps] [teams]
 Example:
-  archon maps/map1.xml teams/team1/ teams/team2/
+  archon match maps/map1.xml teams/team1/ teams/team2/
 
 Options:
-  -c, --clean       Cleans up after archon and restores defaults
   -e, --export-csv  Exports game data to csv
   -h, --help        Prints usage
   -l, --elo         Calculates the elo for the run
@@ -109,8 +97,33 @@ Options:
   -r, --replay-dir  Specify the directory to save the replays in    [default: "replays"]
   -s, --series      Players play the maps in series instead 1 by 1
   -t, --all-teams   Runs all teams in teams/ on the specified maps
-  -v, --visualize   Runs the specified replay(s) in the viewer
 ```
+### Watch the matches
+```
+archon watch [replays]
+```
+
+You can then watch all your saved games
+```
+> archon watch replays/match.rms
+```
+Opens match.rms if the visualizer for you to watch
+```
+> archon watch replays
+```
+Opens all matches in the 'replays' folder for you to watch (close the window to start the next)
+```
+> archon watch replays replays1/match.rms replays2
+```
+Opens all the matches in replays and replays2 and match.rms for you to watch
+
+### Clean
+```
+archon clean
+```
+Cleans archon config files.
+
+
 
 ## Feature Requests
 1. Output to CSV and/or Google Big Query
