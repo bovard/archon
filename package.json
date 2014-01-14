@@ -17,7 +17,8 @@
   "bin": "./bin/archon",
   "dependencies": {
     "optimist": "0.6.0",
-    "winston": "*"
+    "winston": "*",
+    "git": "*"
   },
   "devDependencies": {},
   "optionalDependencies": {},
