@@ -82,13 +82,6 @@ Plays the host bot against all the others on all the maps
 #### Options
 
 ```
-> archon match -h
-Usage:
-  archon match [maps] [teams]
-Example:
-  archon match maps/map1.xml teams/team1/ teams/team2/
-
-Options:
   -e, --export-csv  Exports game data to csv
   -h, --help        Prints usage
   -l, --elo         Calculates the elo for the run
@@ -123,6 +116,27 @@ archon clean
 ```
 Cleans archon config files.
 
+### Spawn (Beta)
+Currently only works in OSX
+```
+archon spawn [branches/tags] [-a/-b/-g]
+```
+Spawns new teams in the teams folder from the given branches or tags
+
+#### Options
+```
+Options:
+  -a, --local-branches   Spawns teams from all local branches
+  -b, --remote-branches  Spawns teams from all remote branches
+  -g, --tags             Spawns teams from all git tags
+```
+
+### Kill (Beta)
+Doesn't work on windows
+```
+archon kill
+```
+Kills all spawned players
 
 
 ## Feature Requests
