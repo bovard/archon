@@ -119,7 +119,7 @@ Cleans archon config files.
 ### Spawn (Beta)
 Currently only works in OSX
 ```
-archon spawn [branches/tags] [-a/-b/-g]
+archon spawn [local branches/tags] [-a/-b/-g]
 ```
 Spawns new teams in the teams folder from the given branches or tags
 
