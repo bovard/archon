@@ -90,6 +90,7 @@ Plays the host bot against all the others on all the maps
   -r, --replay-dir  Specify the directory to save the replays in    [default: "replays"]
   -s, --series      Players play the maps in series instead 1 by 1
   -t, --all-teams   Runs all teams in teams/ on the specified maps
+  -x, --mirror      Runs 2x the matches with teams as both A and B
 ```
 ### Watch the matches
 ```
