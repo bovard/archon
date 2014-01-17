@@ -4,7 +4,9 @@ A helper to test battle code bots (battlecode.org)
 
 ## Installation
 
+```
 npm install -g archon
+```
 
 ## How it works
 
