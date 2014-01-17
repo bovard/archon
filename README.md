@@ -103,7 +103,7 @@ You can then watch all your saved games
 ```
 > archon watch replays/match.rms
 ```
-Opens match.rms if the visualizer for you to watch
+Opens match.rms in the visualizer for you to watch
 ```
 > archon watch replays
 ```
