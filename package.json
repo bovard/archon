@@ -7,7 +7,7 @@
     "battle",
     "code"
   ],
-  "version": "2.2.5",
+  "version": "2.3.0",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -18,7 +18,8 @@
   "dependencies": {
     "optimist": "0.6.0",
     "winston": "*",
-    "git": "*"
+    "git": "*",
+    "request": "*"
   },
   "devDependencies": {},
   "optionalDependencies": {},
