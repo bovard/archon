@@ -8,6 +8,13 @@ A helper to test battle code bots (battlecode.org)
 npm install -g archon
 ```
 
+## Check for Dependancies
+```
+ant -version
+java -version
+```
+
+
 ## How it works
 
 First do:
