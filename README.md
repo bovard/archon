@@ -33,7 +33,7 @@ archon match [teams] [maps] [options]
 
 Plays the two bots against each other on the specified maps
 ```
-> archon teams/botA teams/botB maps/map1
+> archon src/botA src/botB maps/map1
  map1 [botA/botB] botB 1000
  Summary:
  botA 0  1 0
@@ -42,7 +42,7 @@ Plays the two bots against each other on the specified maps
 on map1 botB won in 1000 - 1499 rounds
 
 ```
-> archon teams/botA teams/botB maps/map1 maps/map2 ... maps/mapN
+> archon src/botA src/botB maps/map1 maps/map2 ... maps/mapN
 
  map1 [botA/botB] botA 500
  map2 [botA/botB] botB 1000
@@ -58,7 +58,7 @@ on map1 botB won in 1000 - 1499 rounds
 Plays all bots against each other on every map
 
 ```
-> archon teams/botA teams/botB teams/botC maps/map1 maps/map2
+> archon src/botA src/botB src/botC maps/map1 maps/map2
 
  map1 [botA/botB] botA 1000
  map1 [botA/botC] botC 500
@@ -77,7 +77,7 @@ Plays all bots against each other on every map
 Plays the host bot against all the others on all the maps
 
 ```
-> archon --host botA teams/botB teams/botC maps/map1 maps/map2
+> archon --host botA src/botB src/botC maps/map1 maps/map2
 
  map1 [botA/botB] botA 500
  map1 [botA/botC] botC 1000
@@ -98,7 +98,7 @@ Plays the host bot against all the others on all the maps
   -o, --host        Specify a host for the tournament for VsWorld
   -r, --replay-dir  Specify the directory to save the replays in    [default: "replays"]
   -s, --series      Players play the maps in series instead 1 by 1
-  -t, --all-teams   Runs all teams in teams/ on the specified maps
+  -t, --all-teams   Runs all teams in src/ on the specified maps
   -x, --mirror      Runs 2x the matches with teams as both A and B
 ```
 ### Watch the matches
