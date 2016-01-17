@@ -19,7 +19,8 @@
     "optimist": "0.6.0",
     "winston": "*",
     "git": "*",
-    "request": "*"
+    "request": "*",
+    "yauzl": "2.4.1"
   },
   "devDependencies": {},
   "optionalDependencies": {},
